@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Hangman</title>
+</head>
+<body>
+    <h1>Hangman</h1>
+    <p>Find the hidden word - guess a letter by entering it on your keyboard</p>
+
+    <div class="game-container">
+        <!-- This is the svg containing the platform and the hangman-->
+        <svg height="250" width="250" class="figure-container">
+            <line x1="60" y1="20" x2="140" y2="20" />
+            <line x1="140" y1="20" x2="140" y2="50"/>
+            <line x1="60" y1="20" x2="60" y2="230"/>
+            <line x1="30" y1="230" x2="90" y2="230"/>
+            <!-- this is the hang man-->
+            <!--this is the head-->
+            <circle cx="140" cy="70" r="20" class="figure-part"/>
+            <!--this is the body-->
+            <line x1="140" y1="160" x2="140" y2="90" class="figure-part"/>
+            <!--These are the arms-->
+            <line x1="140" y1="100" x2="100" y2="145" class="figure-part"/>
+            <line x1="140" y1="100" x2="180" y2="145" class="figure-part"/>
+            <!--these are the legs-->
+            <line x1="140" y1="160" x2="100" y2="200" class="figure-part"/>
+            <line x1="180" y1="200" x2="140" y2="160" class="figure-part"/>            
+
+        </svg>
+        <!--this is the container for all the correct word-->
+        <div class="incorrect-letter-container">
+            <div id="incorrect-letter"></div>
+        </div>
+        <!--this is the container for selected word-->
+        <div class="word"></div>
+
+        <!--this is the popup-->
+        <div class="popup-container" id="popup-container">
+            <div class="popup">
+                <h2 id="final-message"></h2>
+                <button id="play-btn">Paly Again</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--this is the notification for repeated letters -->
+    <div class="notification-container" id="notification-container">
+        <p>It looks like you've already guessed this letter. Please try another letter</p>
+    </div>
+    
+
+
+    <script src="script.js"></script>
+</body>
+</html>
