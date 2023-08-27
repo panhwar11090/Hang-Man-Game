@@ -11,14 +11,10 @@ const notification = document.getElementById('notification-container');
 const figureParts = document.querySelectorAll('.figure-part');
 
 // this is the pool
+// getRandomWords();
 
-const words = ["tightly","sale","skin","blow","among","route",
-"meant","fox","region","wall","develop","avoid",
-"bound","born","feel","lift","kitchen","wheel",
-"death","smaller","people","fog","suit","hurried",
-"operation","apple","bat","police","farm","evening",
-"price","slight","brave","cotton","finest","attempt",
-"hospital","carefully","rain","respect","red","jump"];
+let words = ["sale","love"];
+// let wordApi = getRandomWords(); 
 
 // const words = ["bad","no"];
 // select a word at random from words array
@@ -131,7 +127,22 @@ playBtn.addEventListener('click', () => {
     popup.style.display = 'none';
     // refresh displayed word
     displayWord();
+    getRandomWords();
 })
 
 
 displayWord();
+
+
+async function getRandomWords(){
+    const res = await fetch('https://random-word-api.herokuapp.com/word?lang=it');
+    const data = await res.json();
+    
+    const newWords = data;
+    words.length = 0;
+    words.push(...newWords);   
+    console.log(newWords);
+}
+
+
+
